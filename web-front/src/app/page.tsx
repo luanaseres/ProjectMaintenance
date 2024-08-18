@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-import { StatusManutencao } from "./components/status-manutencao";
 
 export default function Home() {
   return (
