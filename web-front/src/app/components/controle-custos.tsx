@@ -2,12 +2,14 @@
 
 import React from 'react';
 
+// Define o tipo para um custo
 type Custo = {
-  categoria: string;
-  descricao: string;
-  valor: number;
+  categoria: string;  // Categoria do custo (Peças, Materiais, etc.)
+  descricao: string; // Descrição detalhada do custo
+  valor: number;     // Valor do custo em reais
 };
 
+// Dados mockados para exemplificar os custos registrados
 const custosMockados: Custo[] = [
   { categoria: 'Peças', descricao: 'Peça de reposição A', valor: 150.0 },
   { categoria: 'Materiais', descricao: 'Material de construção B', valor: 75.5 },
@@ -15,6 +17,7 @@ const custosMockados: Custo[] = [
   { categoria: 'Serviços', descricao: 'Serviço de transporte D', valor: 50.0 },
 ];
 
+// Componente ControleCustos que exibe o formulário para registrar custos e uma tabela com custos registrados
 export function ControleCustos() {
   return (
     <div className="container mx-auto p-4">
@@ -74,6 +77,7 @@ export function ControleCustos() {
       </form>
 
       <h3 className="text-xl font-bold mb-4">Custos Registrados</h3>
+
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>
@@ -83,6 +87,7 @@ export function ControleCustos() {
           </tr>
         </thead>
         <tbody>
+          {/* Mapeia os custosMockados e cria uma linha para cada custo */}
           {custosMockados.map((custo, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b">{custo.categoria}</td>

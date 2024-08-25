@@ -1,17 +1,20 @@
-"use client"; // Garante que o Next.js trate este componente como Client Component
+"use client"; // Garante que o Next.js trate este componente como um Client Component, permitindo o uso de hooks e manipulação de estado
 
 import React from 'react';
 
+// Define o tipo para um colaborador com nome e disponibilidade
 type Colaborador = {
   nome: string;
   disponibilidade: string; // "Disponível" ou "Ocupado"
 };
 
+// Define o tipo para uma equipe com nome e lista de membros
 type Equipe = {
   nomeEquipe: string;
   membros: Colaborador[];
 };
 
+// Dados mockados para equipes e seus membros
 const equipesMockadas: Equipe[] = [
   {
     nomeEquipe: 'Equipe A',
@@ -36,11 +39,13 @@ const equipesMockadas: Equipe[] = [
   },
 ];
 
+// Função componente que representa a atribuição de equipes
 export function AtribuicaoEquipes() {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Atribuição de Equipes</h2>
 
+      {/* Formulário para atribuição de equipes */}
       <form className="p-4 mb-8">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="solicitacao">
@@ -86,6 +91,8 @@ export function AtribuicaoEquipes() {
 
       <h3 className="text-xl font-bold mb-4">Disponibilidade dos Colaboradores</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        {/* Mapeia as equipes e exibe a disponibilidade dos membros */}
         {equipesMockadas.map((equipe, index) => (
           <div key={index} className="bg-white shadow-md rounded p-4">
             <h4 className="font-bold mb-2">{equipe.nomeEquipe}</h4>

@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { RegistroMateriais } from "../components/registro-materiais";
 
-
+// Função componente que representa a página de registro de materiais
 export default function Registro() {
   return(
     <div className="flex flex-col h-screen">

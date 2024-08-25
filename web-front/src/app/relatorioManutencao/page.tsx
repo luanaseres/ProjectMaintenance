@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { RelatoriosManutencao } from "../components/relatorio-manutencao";
 
-
+// Função componente que representa a página de relatórios de manutenção
 export default function RelatorioM() {
   return(
     <div className="flex flex-col h-screen">

@@ -1,8 +1,9 @@
-"use client"; // Garante que o Next.js trate este componente como Client Component
+"use client"; // Garante que o Next.js trate este componente como um Client Component
 
 import React from 'react';
 import Link from 'next/link';
 
+// Definição do tipo para a estrutura de uma manutenção
 type Manutencao = {
   id: number;
   descricao: string;
@@ -12,6 +13,7 @@ type Manutencao = {
   status: string;
 };
 
+// Mock de dados de manutenções para exibição na tabela
 const manutencoesMockadas: Manutencao[] = [
   { id: 1, descricao: 'Troca de óleo', dataSolicitacao: '2024-08-20', prioridade: 'Alta', responsavel: 'João', status: 'Concluída' },
   { id: 2, descricao: 'Reparo no motor', dataSolicitacao: '2024-08-22', prioridade: 'Média', responsavel: 'Maria', status: 'Em Andamento' },
@@ -21,6 +23,7 @@ const manutencoesMockadas: Manutencao[] = [
 export function TabelaManutencoes() {
   return (
     <div className="overflow-x-auto mt-4">
+      {/* Tabela que exibe as manutenções */}
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>

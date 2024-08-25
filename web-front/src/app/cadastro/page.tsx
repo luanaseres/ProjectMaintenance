@@ -3,6 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { CadastroForm } from "../components/cadastro";
 
+// Função componente que representa a página de cadastro
 export default function Cadastro() {
   return(
     <div className="flex flex-col h-screen">

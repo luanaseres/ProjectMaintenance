@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ControleEstoque } from "../components/controle-estoque";
 
-
+// Função componente que representa a página de controle de estoque
 export default function ControleE() {
   return(
     <div className="flex flex-col h-screen">

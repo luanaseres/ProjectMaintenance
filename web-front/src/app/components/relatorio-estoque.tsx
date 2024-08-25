@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+// Define o tipo de dado para o relatório de estoque
 type RelatorioEstoque = {
   peca: string;
   fornecedor: string;
@@ -9,6 +10,7 @@ type RelatorioEstoque = {
   quantidade: number;
 };
 
+// Dados mockados para os relatórios de estoque
 const relatoriosEstoqueMockados: RelatorioEstoque[] = [
   { peca: 'Peça A', fornecedor: 'Fornecedor X', periodo: '01/2024 - 06/2024', quantidade: 100 },
   { peca: 'Peça B', fornecedor: 'Fornecedor Y', periodo: '01/2024 - 06/2024', quantidade: 200 },
@@ -16,11 +18,13 @@ const relatoriosEstoqueMockados: RelatorioEstoque[] = [
   { peca: 'Peça A', fornecedor: 'Fornecedor X', periodo: '07/2024 - 12/2024', quantidade: 80 },
 ];
 
+// Componente principal para exibir os relatórios de estoque
 export function RelatoriosEstoque() {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Relatório de Estoque</h2>
 
+      {/* Formulário para filtrar os relatórios */}
       <form className="p-4 mb-8">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="peca">
@@ -90,6 +94,7 @@ export function RelatoriosEstoque() {
           </tr>
         </thead>
         <tbody>
+          {/* Mapeia os relatórios mockados e exibe cada um em uma linha da tabela */}
           {relatoriosEstoqueMockados.map((relatorio, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b">{relatorio.peca}</td>

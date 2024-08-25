@@ -2,21 +2,26 @@
 
 import React from 'react';
 
+// Define o tipo para uma peça de estoque
 type Peca = {
-  id: number;
-  nome: string;
-  quantidadeEstoque: number;
+  id: number; // Identificador único da peça
+  nome: string; // Nome da peça
+  quantidadeEstoque: number; // Quantidade atual em estoque
 };
 
+// Dados mockados para exemplificar o controle de estoque
 const pecasMockadas: Peca[] = [
   { id: 1, nome: 'Parafuso', quantidadeEstoque: 100 },
   { id: 2, nome: 'Porca', quantidadeEstoque: 50 },
   { id: 3, nome: 'Arruela', quantidadeEstoque: 200 },
 ];
 
+// Componente ControleEstoque que gerencia o estoque e permite registrar movimentações
 export function ControleEstoque() {
+  // Estado para armazenar as peças e suas quantidades em estoque
   const [pecas, setPecas] = React.useState<Peca[]>(pecasMockadas);
 
+  // Função para registrar movimentações no estoque (entrada ou saída)
   const registrarMovimentacao = (id: number, quantidade: number, isEntrada: boolean) => {
     setPecas((pecasAnteriores) =>
       pecasAnteriores.map((peca) =>
@@ -32,13 +37,15 @@ export function ControleEstoque() {
     );
   };
 
+  // Função para lidar com o envio do formulário
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const pecaId = parseInt(formData.get('pecaId') as string);
-    const quantidade = parseInt(formData.get('quantidade') as string);
-    const tipoMovimentacao = formData.get('tipoMovimentacao') as string;
+    event.preventDefault(); // Evita o comportamento padrão do formulário
+    const formData = new FormData(event.currentTarget); // Obtém os dados do formulário
+    const pecaId = parseInt(formData.get('pecaId') as string); // Obtém o ID da peça
+    const quantidade = parseInt(formData.get('quantidade') as string); // Obtém a quantidade
+    const tipoMovimentacao = formData.get('tipoMovimentacao') as string; // Obtém o tipo de movimentação (entrada ou saída)
 
+    // Registra a movimentação no estoque com base nas informações do formulário
     registrarMovimentacao(pecaId, quantidade, tipoMovimentacao === 'entrada');
   };
 
@@ -46,6 +53,7 @@ export function ControleEstoque() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Controle de Estoque</h2>
 
+      {/* Formulário para registrar movimentações no estoque */}
       <form className="p-4 mb-8" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="pecaId">
@@ -113,6 +121,7 @@ export function ControleEstoque() {
       </form>
 
       <h3 className="text-xl font-bold mt-8">Estoque Atual</h3>
+      
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200">
           <thead>

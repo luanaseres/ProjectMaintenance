@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { TabelaManutencoes } from "../components/tabela-manutencao";
 
-
+// Função componente que representa a página de manutenção
 export default function Manutencao() {
   return(
     <div className="flex flex-col h-screen">

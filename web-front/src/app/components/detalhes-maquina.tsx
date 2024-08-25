@@ -1,6 +1,8 @@
 import React from 'react';
 
+// Componente para exibir detalhes da máquina
 export function DetalhesMaquina() {
+  // Dados mockados para exibir detalhes da máquina
   const dadosMaquina = {
     nome: "Máquina X",
     modelo: "Modelo Y",
@@ -67,6 +69,7 @@ export function DetalhesMaquina() {
             ))}
           </ul>
         </div>
+
         <div>
           <h3 className="text-2xl font-bold mb-4">Peças e Materiais Utilizados</h3>
           <ul className="space-y-4">

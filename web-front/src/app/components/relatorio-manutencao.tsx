@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+// Define o tipo de dado para o relatório de manutenção
 type RelatorioManutencao = {
   maquina: string;
   periodo: string;
@@ -10,6 +11,7 @@ type RelatorioManutencao = {
   quantidadeManutencoes: number;
 };
 
+// Dados mockados para os relatórios de manutenção
 const relatoriosMockados: RelatorioManutencao[] = [
   { maquina: 'Máquina A', periodo: '01/2024 - 06/2024', tipoManutencao: 'Preventiva', equipe: 'Equipe A', quantidadeManutencoes: 5 },
   { maquina: 'Máquina B', periodo: '01/2024 - 06/2024', tipoManutencao: 'Corretiva', equipe: 'Equipe B', quantidadeManutencoes: 3 },
@@ -17,11 +19,13 @@ const relatoriosMockados: RelatorioManutencao[] = [
   { maquina: 'Máquina A', periodo: '07/2024 - 12/2024', tipoManutencao: 'Preventiva', equipe: 'Equipe A', quantidadeManutencoes: 4 },
 ];
 
+// Componente principal para exibir os relatórios de manutenção
 export function RelatoriosManutencao() {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Geração de Relatórios</h2>
 
+      {/* Formulário para filtrar os relatórios */}
       <form className="p-4 mb-8">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="maquina">
@@ -108,6 +112,7 @@ export function RelatoriosManutencao() {
           </tr>
         </thead>
         <tbody>
+          {/* Mapeia os relatórios mockados e exibe cada um em uma linha da tabela */}
           {relatoriosMockados.map((relatorio, index) => (
             <tr key={index}>
               <td className="py-2 px-4 border-b">{relatorio.maquina}</td>

@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { DetalhesMaquina } from "../components/detalhes-maquina";
 
-
+// Função componente que representa a página de detalhes da máquina
 export default function Detalhes() {
   return(
     <div className="flex flex-col h-screen">

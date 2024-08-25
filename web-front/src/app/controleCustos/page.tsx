@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { ControleCustos } from "../components/controle-custos";
 
-
+// Função componente que representa a página de controle de custos
 export default function ControleC() {
   return(
     <div className="flex flex-col h-screen">

@@ -2,13 +2,16 @@
 
 import React, { useState } from 'react';
 
+// Componente para o formulário de cadastro de máquinas e peças
 export function CadastroForm() {
+  // Estado para gerenciar o tipo de cadastro (máquina ou peça)
   const [tipoCadastro, setTipoCadastro] = useState<'maquina' | 'peca'>('maquina');
 
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Cadastro de Máquinas e Peças</h2>
-
+      
+      {/* Formulário para cadastro */}
       <form className="space-y-4 p-4 mb-8">
         <div>
           <label htmlFor="tipoCadastro" className="block text-sm font-medium">
@@ -25,6 +28,7 @@ export function CadastroForm() {
           </select>
         </div>
 
+        {/* Campos exibidos quando o tipo de cadastro é 'máquina' */}
         {tipoCadastro === 'maquina' && (
           <>
             <div>
@@ -106,6 +110,7 @@ export function CadastroForm() {
           </>
         )}
 
+        {/* Campos exibidos quando o tipo de cadastro é 'peça' */}
         {tipoCadastro === 'peca' && (
           <>
             <div>

@@ -3,12 +3,13 @@
 import React from 'react';
 
 type PecaMaterial = {
-  id: number;
-  nome: string;
-  fornecedor: string;
-  quantidade: number;
+  id: number; // Identificador único da peça/material
+  nome: string; // Nome da peça/material
+  fornecedor: string; // Nome do fornecedor da peça/material
+  quantidade: number; // Quantidade da peça/material
 };
 
+// Dados mockados para simular um conjunto inicial de peças e materiais
 const pecasMateriaisMockados: PecaMaterial[] = [
   { id: 1, nome: 'Parafuso', fornecedor: 'Fornecedor A', quantidade: 50 },
   { id: 2, nome: 'Porca', fornecedor: 'Fornecedor B', quantidade: 30 },
@@ -16,26 +17,32 @@ const pecasMateriaisMockados: PecaMaterial[] = [
 ];
 
 export function RegistroMateriais() {
+  // Define o estado inicial com os dados mockados
   const [pecasMateriais, setPecasMateriais] = React.useState<PecaMaterial[]>(pecasMateriaisMockados);
 
+  // Função para registrar uma nova peça/material
   const registrarPecaMaterial = (pecaMaterial: PecaMaterial) => {
+    // Atualiza o estado adicionando a nova peça/material ao final da lista
     setPecasMateriais((pecasAnteriores) => [...pecasAnteriores, pecaMaterial]);
   };
 
+  // Função que é chamada ao submeter o formulário
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const nome = formData.get('nome') as string;
-    const fornecedor = formData.get('fornecedor') as string;
-    const quantidade = parseInt(formData.get('quantidade') as string);
+    event.preventDefault(); // Previne o comportamento padrão do formulário de recarregar a página
+    const formData = new FormData(event.currentTarget); // Captura os dados do formulário
+    const nome = formData.get('nome') as string; // Extrai o valor do campo 'nome'
+    const fornecedor = formData.get('fornecedor') as string; // Extrai o valor do campo 'fornecedor'
+    const quantidade = parseInt(formData.get('quantidade') as string); // Extrai e converte o valor do campo 'quantidade' para número
 
+    // Cria um novo objeto PecaMaterial com os dados capturados
     const novaPecaMaterial: PecaMaterial = {
-      id: pecasMateriais.length + 1,
+      id: pecasMateriais.length + 1, // Gera um novo ID baseado na quantidade atual de itens
       nome,
       fornecedor,
       quantidade,
     };
 
+    // Chama a função para registrar a nova peça/material
     registrarPecaMaterial(novaPecaMaterial);
   };
 
@@ -43,6 +50,7 @@ export function RegistroMateriais() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Registro de Peças e Materiais</h2>
 
+      {/* Formulário para registro de novas peças/materiais */}
       <form className="p-4 mb-8" onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="nome">

@@ -3,12 +3,13 @@
 import React from 'react';
 
 type RelatorioDesempenho = {
-  equipe: string;
-  tempoMedioResolucao: number; // Em horas
-  manutencoesRealizadas: number;
-  pecasUtilizadas: number;
+  equipe: string; // Nome da equipe de manutenção
+  tempoMedioResolucao: number; // Tempo médio de resolução das manutenções, em horas
+  manutencoesRealizadas: number; // Número de manutenções realizadas pela equipe
+  pecasUtilizadas: number; // Quantidade de peças utilizadas nas manutenções
 };
 
+// Dados mockados para simular relatórios de desempenho das equipes
 const relatoriosMockados: RelatorioDesempenho[] = [
   { equipe: 'Equipe A', tempoMedioResolucao: 5.2, manutencoesRealizadas: 12, pecasUtilizadas: 30 },
   { equipe: 'Equipe B', tempoMedioResolucao: 3.8, manutencoesRealizadas: 20, pecasUtilizadas: 45 },
@@ -20,6 +21,7 @@ export function RelatoriosDesempenho() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Relatórios de Desempenho</h2>
 
+      {/* Formulário para adicionar relatórios de desempenho */}
       <form className="p-4 mb-8">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="peca">
@@ -81,6 +83,7 @@ export function RelatoriosDesempenho() {
       </form>
 
       <h3 className="text-xl font-bold mb-4">Relatórios Gerados</h3>
+
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>

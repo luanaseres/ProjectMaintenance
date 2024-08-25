@@ -9,8 +9,10 @@ import { LuForklift } from "react-icons/lu";
 import { CgNotes } from "react-icons/cg";
 import { FaRegCircleCheck } from "react-icons/fa6";
 
+// Função componente que representa a página inicial
 export default function Home() {
 
+  // Define os dados para os cartões que serão exibidos
   const cards = [
     {color: "bg-orange-200", qty: "100", text: "Máquinas", icon: <LuForklift size={48} />},
     {color: "bg-blue-200", qty: "350", text: "Equipamentos", icon: <HiOutlineWrenchScrewdriver size={48} />},
@@ -21,8 +23,10 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col bg-customBlue">
       <Header/>
+
       <div className="mt-3">
         <div className="grid grid-cols-4 gap-4 p-6 bg-customBlue">
+          {/* Mapeia os dados dos cards e renderiza um Card para cada item */}
           {cards.map((props) => (
             <Card color={props.color} qty={props.qty} text={props.text} icon={props.icon}/>
           ))}
@@ -35,9 +39,7 @@ export default function Home() {
         </div>
       </main>
 
-
-     <Footer/>
-
+      <Footer/>
     </div>
   );
 }

@@ -1,8 +1,9 @@
-"use client"; // Garante que o Next.js trate este componente como Client Component
+"use client"; // Garante que o Next.js trate este componente como um Client Component
 
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+// Definição do tipo para representar um item (máquinas ou peças)
 type Item = {
   id: number;
   nome: string;
@@ -11,6 +12,7 @@ type Item = {
   status: string;
 };
 
+// Dados mockados de máquinas e peças
 const itensMockados: Item[] = [
   // Máquinas
   { id: 1, nome: 'CNC', modelo: 'XYZ-1000', quantidade: '26', status: 'Ativo' },
@@ -38,17 +40,20 @@ const itensMockados: Item[] = [
 ];
 
 export function Tabela() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1); // Estado para a página atual da tabela
+  const itemsPerPage = 10; // Define quantos itens serão exibidos por página
 
+  // Calcula o número total de páginas
   const totalPages = Math.ceil(itensMockados.length / itemsPerPage);
 
+  // Função para trocar de página
   const handleChangePage = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
     }
   };
 
+  // Índices para fatiar o array e exibir apenas os itens da página atual
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = itensMockados.slice(indexOfFirstItem, indexOfLastItem);
@@ -56,6 +61,7 @@ export function Tabela() {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Itens da Empresa</h2>
+      {/* Tabela para exibir os itens */}
       <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
         <thead className="bg-customBlue text-white">
           <tr>
@@ -64,7 +70,7 @@ export function Tabela() {
             <th className="py-2 px-4 text-left">Modelo</th>
             <th className="py-2 px-4 text-left">Quantidade</th>
             <th className="py-2 px-4 text-left">Status</th>
-            <th className="py-2 px-4 text-left">Detalhes</th> {/* Coluna para detalhes */}
+            <th className="py-2 px-4 text-left">Detalhes</th>
           </tr>
         </thead>
         <tbody>
@@ -82,6 +88,7 @@ export function Tabela() {
           ))}
         </tbody>
       </table>
+      {/* Controles de navegação entre as páginas da tabela */}
       <div className="flex justify-between items-center mt-4">
         <button
           onClick={() => handleChangePage(currentPage - 1)}

@@ -1,11 +1,13 @@
 import React from 'react';
 import { TabelaManutencoes } from './tabela-manutencao';
 
-
+// Componente para o formulário de cadastro de manutenção
 export function CadastroManutencao() {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Cadastro de Manutenção</h2>
+      
+      {/* Formulário para cadastro de manutenção */}
       <form className="p-4 mb-8">
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="descricao">
@@ -17,6 +19,7 @@ export function CadastroManutencao() {
             required
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="dataSolicitacao">
             Data da Solicitação
@@ -28,6 +31,7 @@ export function CadastroManutencao() {
             required
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="prioridade">
             Prioridade
@@ -43,6 +47,7 @@ export function CadastroManutencao() {
             <option value="baixa">Baixa</option>
           </select>
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="responsavel">
             Responsável
@@ -54,6 +59,7 @@ export function CadastroManutencao() {
             required
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="status">
             Status da Manutenção
@@ -69,6 +75,7 @@ export function CadastroManutencao() {
             <option value="concluida">Concluída</option>
           </select>
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="arquivos">
             Upload de Arquivos
@@ -80,6 +87,7 @@ export function CadastroManutencao() {
             multiple
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2" htmlFor="comentarios">
             Comentários
@@ -89,6 +97,7 @@ export function CadastroManutencao() {
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
+
         <div className="flex items-center justify-between">
           <button
             type="submit"
