@@ -6,7 +6,6 @@ export function DetalhesMaquina() {
     modelo: "Modelo Y",
     numeroSerie: "123456",
     localizacao: "Fábrica 1",
-    imagemUrl: "https://via.placeholder.com/400",
     historicoManutencao: [
       {
         id: 1,
@@ -44,27 +43,22 @@ export function DetalhesMaquina() {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="max-w-lg mx-auto bg-white shadow-md rounded p-4">
-        <h2 className="text-2xl font-bold mb-4">Detalhes da Máquina</h2>
-        <div className="mb-4">
-          <img
-            src={dadosMaquina.imagemUrl}
-            alt={`Imagem da ${dadosMaquina.nome}`}
-            className="w-full h-auto rounded"
-          />
+    <div className="container mx-auto p-6">
+      <div className="p-6 mb-8">
+        <h2 className="text-3xl font-bold mb-6">Detalhes da Máquina</h2>
+        <div className="flex mb-6">
+          <div className="ml-6 w-2/3">
+            <p className="text-lg font-semibold mb-2"><strong>Nome:</strong> {dadosMaquina.nome}</p>
+            <p className="text-lg font-semibold mb-2"><strong>Modelo:</strong> {dadosMaquina.modelo}</p>
+            <p className="text-lg font-semibold mb-2"><strong>Número de Série:</strong> {dadosMaquina.numeroSerie}</p>
+            <p className="text-lg font-semibold mb-2"><strong>Localização:</strong> {dadosMaquina.localizacao}</p>
+          </div>
         </div>
-        <div className="mb-4">
-          <p><strong>Nome:</strong> {dadosMaquina.nome}</p>
-          <p><strong>Modelo:</strong> {dadosMaquina.modelo}</p>
-          <p><strong>Número de Série:</strong> {dadosMaquina.numeroSerie}</p>
-          <p><strong>Localização:</strong> {dadosMaquina.localizacao}</p>
-        </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Histórico de Manutenções</h3>
-          <ul className="list-disc pl-5">
+        <div className="mb-8">
+          <h3 className="text-2xl font-bold mb-4">Histórico de Manutenções</h3>
+          <ul className="space-y-4">
             {dadosMaquina.historicoManutencao.map((manutencao) => (
-              <li key={manutencao.id}>
+              <li key={manutencao.id} className="p-4 border border-gray-200 rounded-lg shadow-sm">
                 <p><strong>Data:</strong> {manutencao.data}</p>
                 <p><strong>Descrição:</strong> {manutencao.descricao}</p>
                 <p><strong>Responsável:</strong> {manutencao.responsavel}</p>
@@ -73,11 +67,11 @@ export function DetalhesMaquina() {
             ))}
           </ul>
         </div>
-        <div className="mb-4">
-          <h3 className="text-xl font-bold mb-2">Peças e Materiais Utilizados</h3>
-          <ul className="list-disc pl-5">
+        <div>
+          <h3 className="text-2xl font-bold mb-4">Peças e Materiais Utilizados</h3>
+          <ul className="space-y-4">
             {dadosMaquina.pecasUtilizadas.map((peca) => (
-              <li key={peca.id}>
+              <li key={peca.id} className="p-4 border border-gray-200 rounded-lg shadow-sm">
                 <p><strong>Nome:</strong> {peca.nome}</p>
                 <p><strong>Código:</strong> {peca.codigo}</p>
                 <p><strong>Fornecedor:</strong> {peca.fornecedor}</p>

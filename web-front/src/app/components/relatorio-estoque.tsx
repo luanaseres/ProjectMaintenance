@@ -19,17 +19,17 @@ const relatoriosEstoqueMockados: RelatorioEstoque[] = [
 export function RelatoriosEstoque() {
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">Geração de Relatórios de Estoque</h2>
+      <h2 className="text-2xl font-bold mb-4">Relatório de Estoque</h2>
 
-      <form className="max-w-lg mx-auto bg-white shadow-md rounded p-4 mb-8">
+      <form className="p-4 mb-8">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="peca">
+          <label className="block text-sm font-bold mb-2" htmlFor="peca">
             Peça
           </label>
           <select
             id="peca"
             name="peca"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todas</option>
             <option value="Peça A">Peça A</option>
@@ -39,13 +39,13 @@ export function RelatoriosEstoque() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="fornecedor">
+          <label className="block text-sm font-bold mb-2" htmlFor="fornecedor">
             Fornecedor
           </label>
           <select
             id="fornecedor"
             name="fornecedor"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todos</option>
             <option value="Fornecedor X">Fornecedor X</option>
@@ -55,13 +55,13 @@ export function RelatoriosEstoque() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="periodo">
+          <label className="block text-sm font-bold mb-2" htmlFor="periodo">
             Período
           </label>
           <select
             id="periodo"
             name="periodo"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todos</option>
             <option value="01/2024 - 06/2024">01/2024 - 06/2024</option>
@@ -72,9 +72,9 @@ export function RelatoriosEstoque() {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-customBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            Gerar Relatório
+            Enviar
           </button>
         </div>
       </form>

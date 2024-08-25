@@ -20,15 +20,15 @@ export function ControleCustos() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Controle de Custos</h2>
 
-      <form className="max-w-lg mx-auto bg-white shadow-md rounded p-4 mb-8">
+      <form className="p-4 mb-8">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="categoria">
+          <label className="block text-sm font-bold mb-2" htmlFor="categoria">
             Categoria
           </label>
           <select
             id="categoria"
             name="categoria"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="Peças">Peças</option>
             <option value="Materiais">Materiais</option>
@@ -45,20 +45,20 @@ export function ControleCustos() {
             type="text"
             id="descricao"
             name="descricao"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Descrição do gasto"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="valor">
+          <label className="block text-sm font-bold mb-2" htmlFor="valor">
             Valor
           </label>
           <input
             type="number"
             id="valor"
             name="valor"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Valor do gasto"
           />
         </div>
@@ -66,7 +66,7 @@ export function ControleCustos() {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-customBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Registrar Gasto
           </button>
