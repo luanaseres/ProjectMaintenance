@@ -9,7 +9,7 @@ export function CadastroForm() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Cadastro de Máquinas e Peças</h2>
 
-      <form className="space-y-4">
+      <form className="space-y-4 p-4 mb-8">
         <div>
           <label htmlFor="tipoCadastro" className="block text-sm font-medium">
             Tipo de Cadastro
@@ -18,7 +18,7 @@ export function CadastroForm() {
             id="tipoCadastro"
             value={tipoCadastro}
             onChange={(e) => setTipoCadastro(e.target.value as 'maquina' | 'peca')}
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
           >
             <option value="maquina">Máquina</option>
             <option value="peca">Peça</option>
@@ -34,7 +34,7 @@ export function CadastroForm() {
               <input
                 id="nomeMaquina"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -45,7 +45,7 @@ export function CadastroForm() {
               <input
                 id="tipoMaquina"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -56,7 +56,7 @@ export function CadastroForm() {
               <input
                 id="modeloMaquina"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -67,7 +67,7 @@ export function CadastroForm() {
               <input
                 id="dataFabricacao"
                 type="date"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -78,7 +78,7 @@ export function CadastroForm() {
               <input
                 id="numeroSerie"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -89,7 +89,7 @@ export function CadastroForm() {
               <input
                 id="localizacaoMaquina"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -100,7 +100,7 @@ export function CadastroForm() {
               <input
                 id="uploadImagemMaquina"
                 type="file"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
           </>
@@ -115,7 +115,7 @@ export function CadastroForm() {
               <input
                 id="nomePeca"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -126,7 +126,7 @@ export function CadastroForm() {
               <input
                 id="codigoPeca"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -137,7 +137,7 @@ export function CadastroForm() {
               <input
                 id="fornecedorPeca"
                 type="text"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -148,7 +148,7 @@ export function CadastroForm() {
               <input
                 id="quantidadeEstoque"
                 type="number"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -159,7 +159,7 @@ export function CadastroForm() {
               <input
                 id="valorUnitario"
                 type="number"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
 
@@ -170,7 +170,7 @@ export function CadastroForm() {
               <input
                 id="uploadImagemPeca"
                 type="file"
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm h-8"
               />
             </div>
           </>
@@ -179,7 +179,7 @@ export function CadastroForm() {
         <div>
           <button
             type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded-md shadow"
+            className="bg-customBlue text-white py-2 px-4 rounded-md shadow"
           >
             Salvar
           </button>
