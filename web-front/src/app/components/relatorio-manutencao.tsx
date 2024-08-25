@@ -22,15 +22,15 @@ export function RelatoriosManutencao() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Geração de Relatórios</h2>
 
-      <form className="max-w-lg mx-auto bg-white shadow-md rounded p-4 mb-8">
+      <form className="p-4 mb-8">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="maquina">
+          <label className="block text-sm font-bold mb-2" htmlFor="maquina">
             Máquina
           </label>
           <select
             id="maquina"
             name="maquina"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todas</option>
             <option value="Máquina A">Máquina A</option>
@@ -40,13 +40,13 @@ export function RelatoriosManutencao() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="periodo">
+          <label className="block text-sm font-bold mb-2" htmlFor="periodo">
             Período
           </label>
           <select
             id="periodo"
             name="periodo"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todos</option>
             <option value="01/2024 - 06/2024">01/2024 - 06/2024</option>
@@ -55,13 +55,13 @@ export function RelatoriosManutencao() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="tipoManutencao">
+          <label className="block text-sm font-bold mb-2" htmlFor="tipoManutencao">
             Tipo de Manutenção
           </label>
           <select
             id="tipoManutencao"
             name="tipoManutencao"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todos</option>
             <option value="Preventiva">Preventiva</option>
@@ -71,13 +71,13 @@ export function RelatoriosManutencao() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="equipe">
+          <label className="block text-sm font-bold mb-2" htmlFor="equipe">
             Equipe
           </label>
           <select
             id="equipe"
             name="equipe"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
           >
             <option value="">Todas</option>
             <option value="Equipe A">Equipe A</option>
@@ -89,9 +89,9 @@ export function RelatoriosManutencao() {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-customBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            Gerar Relatório
+            Enviar
           </button>
         </div>
       </form>
