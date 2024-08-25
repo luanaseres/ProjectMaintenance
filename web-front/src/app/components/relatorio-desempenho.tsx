@@ -20,6 +20,67 @@ export function RelatoriosDesempenho() {
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">Relatórios de Desempenho</h2>
 
+      <form className="p-4 mb-8">
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="peca">
+            Equipe
+          </label>
+          <input
+            type="text"
+            id="Equipe"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="fornecedor">
+            Tempo Médio de Resolução (h)
+          </label>
+          <input
+            type="number"
+            id="Equipe"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="periodo">
+            Manutenções Realizadas
+          </label>
+          <input
+            type="number"
+            id="Equipe"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-sm font-bold mb-2" htmlFor="periodo">
+            Peças Utilizadas
+          </label>
+          <input
+            type="number"
+            id="Equipe"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+
+        <div className="flex items-center justify-between">
+          <button
+            type="submit"
+            className="bg-customBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Enviar
+          </button>
+        </div>
+        
+      </form>
+
+      <h3 className="text-xl font-bold mb-4">Relatórios Gerados</h3>
       <table className="min-w-full bg-white border border-gray-200">
         <thead>
           <tr>
