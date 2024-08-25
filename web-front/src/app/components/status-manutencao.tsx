@@ -29,17 +29,17 @@ export function StatusManutencao() {
 
   return (
     <div className="container mx-auto p-4">
-      <form className="max-w-lg mx-auto bg-white shadow-md rounded p-4" onSubmit={handleSubmit}>
+      <form className="p-4 mb-8" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-bold mb-4">Gerenciamento de Status da Manutenção</h2>
         
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="status">
+          <label className="block text-sm font-bold mb-2" htmlFor="status">
             Status da Manutenção
           </label>
           <select
             id="status"
             name="status"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             defaultValue={dadosMockados.status}
           >
             <option value="pendente">Pendente</option>
@@ -50,26 +50,26 @@ export function StatusManutencao() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="comentarios">
+          <label className="block text-sm font-bold mb-2" htmlFor="comentarios">
             Comentários
           </label>
           <textarea
             id="comentarios"
             name="comentarios"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             defaultValue={dadosMockados.comentarios}
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="arquivos">
+          <label className="block text-sm font-bold mb-2" htmlFor="arquivos">
             Upload de Arquivos
           </label>
           <input
             type="file"
             id="arquivos"
             name="arquivos"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             multiple
             defaultValue=""
           />
@@ -84,7 +84,7 @@ export function StatusManutencao() {
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-customBlue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Atualizar Status
           </button>
