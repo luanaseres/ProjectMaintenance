@@ -2,6 +2,8 @@ import { LogoTitle } from '@/src/components/logoTitle';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 export default function TabLayout() {
   const color = 'white'
   return (
@@ -24,7 +26,7 @@ export default function TabLayout() {
         name="managementMachine"
         options={{
           title: 'ManagementMachine',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <MaterialIcons name="forklift" size={28} color={color} />,
         }}
       />
       <Tabs.Screen
