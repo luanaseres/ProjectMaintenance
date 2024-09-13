@@ -7,3 +7,10 @@ export interface Machine {
   manufactureDate: string;
   serialNumber: string;
 }
+
+export interface Maintenance {
+  id: number;
+  machineId: number;
+  maintenanceDate: string;
+  comments: string;
+}
