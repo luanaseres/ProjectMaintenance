@@ -3,12 +3,12 @@ import { View, Text, TextInput, Button, ScrollView, TouchableOpacity } from 'rea
 
 // Mock dos relatórios de manutenção
 const relatoriosManutencaoMockados = [
-  { maquina: 'Fresadora', data: '01/09/2024', descricao: 'Troca de peças no motor', status: 'Concluída' },
-  { maquina: 'Laser Cutter', data: '15/07/2024', descricao: 'Verificação de sistema elétrico', status: 'Em andamento' },
-  { maquina: 'Impressora 3D', data: '22/08/2024', descricao: 'Manutenção preventiva', status: 'Pendente' },
-  { maquina: 'Plasma Cutter', data: '26/09/2024', descricao: 'Manutenção da bateria', status: 'Em andamento' },
-  { maquina: 'CNC', data: '07/08/2024', descricao: 'Manutenção preventiva', status: 'Pendente' },
-  { maquina: 'Torno', data: '10/06/2024', descricao: 'Troca de peça de rolamento', status: 'Concluída' },
+  { maquina: 'Fresadora', data: '01/09/2024', descricao: 'Troca de Óleo', status: 'Concluída' },
+  { maquina: 'CNC', data: '07/08/2024', descricao: 'Substituição de Filtro', status: 'Pendente' },
+  { maquina: 'Torno', data: '10/06/2024', descricao: 'Ajuste de Correia', status: 'Em andamento' },
+  { maquina: 'Laser Cutter', data: '15/07/2024', descricao: 'Verificação de Sistema Elétrico', status: 'Em andamento' },
+  { maquina: 'Impressora 3D', data: '22/08/2024', descricao: 'Manutenção Preventiva', status: 'Pendente' },
+  { maquina: 'Plasma Cutter', data: '26/09/2024', descricao: 'Manutenção da Bateria', status: 'Em andamento' },
 ];
 
 // Mock de estoque de peças
