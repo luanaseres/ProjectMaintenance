@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Text } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { View, Text, Image } from "react-native";
 
 export function LogoTitle() {
+  const logo = require("../assets/manutencao.png");
+
   return (
     <View className="flex flex-row justify-around w-full align-middle text-center">
-        <FontAwesome name="cog" size={20} color={'white'}/>
-        <Text className="text-white text-lg">Maintenance</Text>
+      <Image source={logo} className="w-7 h-7" />
+      <Text className="text-white text-lg">Maintenance</Text>
     </View>
   );
 }
