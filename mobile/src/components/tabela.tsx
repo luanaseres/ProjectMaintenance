@@ -59,9 +59,9 @@ export function Tabela() {
             <Text className="flex-1 text-white font-bold text-center">ID</Text>
             <Text className="flex-1 text-white font-bold text-center">Nome</Text>
             <Text className="flex-1 text-white font-bold text-center">Modelo</Text>
-            <Text className="flex-1 text-white font-bold text-center">Quantidade</Text>
+            <Text className="flex-1 text-white font-bold text-center">Qtd</Text>
             <Text className="flex-1 text-white font-bold text-center">Status</Text>
-            <Text className="flex-1 text-white font-bold text-center">Detalhes</Text>
+            <Text className="flex-1 text-white font-bold text-center">Detalhe</Text>
           </View>
           {currentItems.map((item) => (
             <View key={item.id} className="flex-row border border-gray-300 p-2">
@@ -82,7 +82,7 @@ export function Tabela() {
         <TouchableOpacity
           onPress={() => handleChangePage(currentPage - 1)}
           disabled={currentPage === 1}
-          className={`p-2 rounded ${currentPage === 1 ? 'bg-gray-300' : 'bg-blue-500'}`}
+          className={`p-2 rounded ${currentPage === 1 ? 'bg-gray-700' : 'bg-blue-500'}`}
         >
           <Text className="text-white">Anterior</Text>
         </TouchableOpacity>
@@ -90,7 +90,7 @@ export function Tabela() {
         <TouchableOpacity
           onPress={() => handleChangePage(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className={`p-2 rounded ${currentPage === totalPages ? 'bg-gray-300' : 'bg-blue-500'}`}
+          className={`p-2 rounded ${currentPage === totalPages ? 'bg-gray-700' : 'bg-blue-500'}`}
         >
           <Text className="text-white">Próxima</Text>
         </TouchableOpacity>
