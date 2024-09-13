@@ -14,7 +14,7 @@ export default function HomeScreen() {
 
   return (
     <View className="flex-1 bg-customBlue">
-      <ScrollView className="mt-3">
+      <ScrollView className="">
         <View className="flex flex-row flex-wrap justify-between p-6">
           {cards.map((card, index) => (
             <View key={index} className={`w-[48%] mb-4 p-4 rounded-xl shadow-lg ${card.color}`}>
