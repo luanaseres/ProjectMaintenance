@@ -48,7 +48,7 @@ export default function RegistroMateriaisManutencao() {
       <ScrollView className="flex-1 mb-16">
         {manutencaoSelecionada === null ? (
           <View className="flex-1 m-5">
-            <Text className="text-2xl font-bold text-white mb-4">Selecione uma Manutenção</Text>
+            <Text className="text-2xl font-bold text-white mb-4 text-center">Selecione uma Manutenção</Text>
             {manutencoesMocadas.map((manutencao) => (
               <TouchableOpacity
                 key={manutencao.id}
