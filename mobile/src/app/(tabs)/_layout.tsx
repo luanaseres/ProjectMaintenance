@@ -1,4 +1,4 @@
-import { LogoTitle } from '@/src/components/LogoTitle';
+import { LogoTitle } from '@/src/components/logoTitle';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
