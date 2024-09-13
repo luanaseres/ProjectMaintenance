@@ -44,8 +44,8 @@ export default function RegistroMateriaisManutencao() {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-customBlue ">
-      <ScrollView className="flex-1">
+    <SafeAreaView className="flex-1 bg-customBlue">
+      <ScrollView className="flex-1 mb-16">
         {manutencaoSelecionada === null ? (
           <View className="flex-1 m-5">
             <Text className="text-2xl font-bold text-white mb-4">Selecione uma Manutenção</Text>
@@ -102,36 +102,37 @@ export default function RegistroMateriaisManutencao() {
                 </TouchableOpacity>
               </View>
             ))}
-
-            <TouchableOpacity
-              className="bg-green-500 p-3 rounded-md mb-4 mt-5"
-              onPress={adicionarPecaMaterial}
-            >
-              <Text className="text-white font-bold text-center">Adicionar Peça/Material</Text>
-            </TouchableOpacity>
-
-            {manutencaoSelecionada !== null && (
-              <View className="flex-row justify-between bg-customBlue">
-                <TouchableOpacity
-                  className="bg-cyan-500 p-3 rounded-md flex-1 mr-2"
-                  onPress={() => {
-                    // Função para salvar os dados (ainda não implementada)
-                    alert('Dados salvos!');
-                  }}
-                >
-                  <Text className="text-white font-bold text-center">Salvar</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  className="bg-red-600 p-3 rounded-md flex-1 ml-2"
-                  onPress={() => setManutencaoSelecionada(null)}
-                >
-                  <Text className="text-white font-bold text-center">Cancelar</Text>
-                </TouchableOpacity>
-              </View>
-            )}
           </View>
         )}
       </ScrollView>
+
+      {manutencaoSelecionada !== null && (
+        <View className="absolute bottom-0 left-0 right-0 p-4 bg-customBlue">
+          <TouchableOpacity
+            className="bg-green-500 p-3 rounded-md w-full mb-4"
+            onPress={adicionarPecaMaterial}
+          >
+            <Text className="text-white font-bold text-center">Adicionar Peça/Material</Text>
+          </TouchableOpacity>
+
+          <View className="flex-row justify-between">
+            <TouchableOpacity
+              className="bg-cyan-500 p-3 rounded-md flex-1 mr-2"
+              onPress={() => {
+                alert('Dados salvos!');
+              }}
+            >
+              <Text className="text-white font-bold text-center">Salvar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              className="bg-red-600 p-3 rounded-md flex-1 ml-2"
+              onPress={() => setManutencaoSelecionada(null)}
+            >
+              <Text className="text-white font-bold text-center">Cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
