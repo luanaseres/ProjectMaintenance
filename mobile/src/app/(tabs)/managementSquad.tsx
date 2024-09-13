@@ -189,7 +189,7 @@ function DisponibilidadeEquipes({ onSelect, selectedManutencao }: Disponibilidad
 
   return (
     <View className="flex-1 p-4 bg-customBlue">
-      <Text className="text-2xl font-bold text-white mb-4">Verificar Disponibilidade</Text>
+      <Text className="text-2xl font-bold text-white mb-4 text-center">Verificar Disponibilidade</Text>
       <ScrollView className="w-full">
         <Text className="text-lg font-bold text-white mb-2">Selecione a Manutenção</Text>
         {manutencoesMockadas.map((manutencao) => (
