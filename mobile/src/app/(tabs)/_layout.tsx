@@ -1,5 +1,7 @@
 import { LogoTitle } from '@/src/components/logoTitle';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Tabs } from 'expo-router';
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -33,23 +35,24 @@ export default function TabLayout() {
         name="managementSquad"
         options={{
           title: 'ManagementSquad',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <FontAwesome size={24} name="group" color={color} />,
         }}
       />
       <Tabs.Screen
         name="register"
         options={{
           title: 'Register',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <FontAwesome5 name="clipboard-list" size={26} color={color} />,
         }}
       />
       <Tabs.Screen
         name="report"
         options={{
           title: 'Report',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <MaterialCommunityIcons name="book-edit" size={28} color={color} />,
         }}
       />
+
       <Tabs.Screen
         name="request"
         options={{

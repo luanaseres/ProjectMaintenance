@@ -61,7 +61,6 @@ export function Tabela() {
             <Text className="flex-1 text-white font-bold text-center">Modelo</Text>
             <Text className="flex-1 text-white font-bold text-center">Qtd</Text>
             <Text className="flex-1 text-white font-bold text-center">Status</Text>
-            <Text className="flex-1 text-white font-bold text-center">Detalhe</Text>
           </View>
           {currentItems.map((item) => (
             <View key={item.id} className="flex-row border border-gray-300 p-2">
@@ -70,9 +69,6 @@ export function Tabela() {
               <Text className="flex-1 text-center text-white">{item.modelo}</Text>
               <Text className="flex-1 text-center text-white">{item.quantidade}</Text>
               <Text className="flex-1 text-center text-white">{item.status}</Text>
-              <TouchableOpacity>
-                <Text className="text-blue-500 text-center">Detalhes</Text>
-              </TouchableOpacity>
             </View>
           ))}
         </View>
