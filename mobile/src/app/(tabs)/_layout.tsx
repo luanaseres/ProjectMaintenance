@@ -2,9 +2,11 @@ import { LogoTitle } from '@/src/components/logoTitle';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { Tabs } from 'expo-router';
 
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 
 export default function TabLayout() {
   const color = 'white'
@@ -21,7 +23,7 @@ export default function TabLayout() {
         name="maintenance"
         options={{
           title: 'Maintenance',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <FontAwesome6 name="screwdriver-wrench" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
