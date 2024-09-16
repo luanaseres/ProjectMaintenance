@@ -33,17 +33,17 @@ export default function TabManagementMachine() {
       <ScrollView className="flex-1">
         {maquinaSelecionada === null ? (
           <View className="flex-1 m-5">
-            <Text className="text-2xl font-bold text-white mb-4">Gerenciamento de Máquinas</Text>
+            <Text className="text-2xl font-bold text-white mb-4">Selecione uma Máquinas</Text>
             {maquinasMocadas.map((maquina) => (
               <TouchableOpacity
                 key={maquina.id}
-                className={`p-4 mb-4 rounded-lg ${maquinaSelecionada === maquina.id ? 'bg-blue-800' : 'bg-blue-900'}`}
+                className={`p-4 mb-4 rounded-lg ${maquinaSelecionada === maquina.id ? 'bg-customGrey' : 'bg-customGrey'}`}
                 onPress={() => selecionarMaquina(maquina.id)}
               >
-                <Text className={`text-lg font-bold ${maquinaSelecionada === maquina.id ? 'text-white' : 'text-gray-100'}`}>
+                <Text className={`text-lg font-bold ${maquinaSelecionada === maquina.id ? 'text-black' : 'text-black'}`}>
                   {maquina.name} - {maquina.type}
                 </Text>
-                <Text className="text-gray-300">Localização: {maquina.location}</Text>
+                <Text className="text-slate-900">Localização: {maquina.location}</Text>
               </TouchableOpacity>
             ))}
           </View>
