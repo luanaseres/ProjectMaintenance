@@ -59,7 +59,7 @@ export default function TabLayout() {
         name="request"
         options={{
           title: 'Request',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="android" color={color} />,
+          tabBarIcon: ({color}) => <MaterialCommunityIcons name="clipboard-text-multiple" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
