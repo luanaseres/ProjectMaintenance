@@ -1,11 +1,65 @@
 import { Link } from 'expo-router';
-import { View, Text } from 'react-native';
+import { useState } from 'react';
+import { View, Text, TextInput, Switch, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
 
-export default function TabSettings() {
+export default function Settings() {
+  const [user, setUser] = useState({
+    name: 'João Silva',
+    email: 'joao.silva@example.com',
+  });
+
+  const [emailNotifications, setEmailNotifications] = useState(true);
+  const [pushNotifications, setPushNotifications] = useState(true);
+
+  const toggleEmailNotifications = () => setEmailNotifications(prevState => !prevState);
+  const togglePushNotifications = () => setPushNotifications(prevState => !prevState);
+
   return (
-    <View>
-      <Text>Tab Settings</Text>
-      <Link href={"/login"}><Text>Sair</Text></Link>
-    </View>
+    <SafeAreaView className="flex-1 bg-customBlue">
+      <ScrollView className="flex-1 p-4">
+        {/* Perfil do Usuário */}
+        <View className="mb-6">
+          <Text className="text-xl font-semibold text-white mb-2">Perfil do Usuário</Text>
+          <TextInput
+            className="p-2 rounded bg-white mb-2"
+            placeholder="Nome"
+            value={user.name}
+            editable={false}
+          />
+          <TextInput
+            className="p-2 rounded bg-white mb-2"
+            placeholder="E-mail"
+            value={user.email}
+            editable={false}
+          />
+        </View>
+
+        {/* Preferências de Notificação */}
+        <View className="mb-6">
+          <Text className="text-xl font-semibold text-white mb-2">Preferências de Notificação</Text>
+          <View className="flex-row items-center mb-2">
+            <Text className="text-lg text-white flex-1">Notificações por E-mail</Text>
+            <Switch value={emailNotifications} onValueChange={toggleEmailNotifications} />
+          </View>
+          <View className="flex-row items-center mb-2">
+            <Text className="text-lg text-white flex-1">Notificações Push</Text>
+            <Switch value={pushNotifications} onValueChange={togglePushNotifications} />
+          </View>
+        </View>
+
+        {/* Sobre o Aplicativo */}
+        <View className="mb-6">
+          <Text className="text-xl font-semibold text-white mb-2">Sobre o Aplicativo</Text>
+          <Text className="text-white">Versão 1.0.0</Text>
+        </View>
+
+        {/* Logout */}
+        <TouchableOpacity className="bg-red-600 p-3 rounded-md">
+          <Link href={"/login"}>
+            <Text className="text-white text-center text-lg">Sair</Text>
+          </Link>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
