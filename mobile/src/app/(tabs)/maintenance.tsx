@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, FlatList, TextInput, Alert, SafeAreaView, ScrollView } from 'react-native';
-import { BlurView } from 'expo-blur'; // Importando BlurView para o efeito de desfoque
-import { Machine, Maintenance } from '../../types'; // Ajuste o caminho conforme necessário
+import { View, Text, TouchableOpacity, Modal, FlatList, TextInput, Alert, SafeAreaView } from 'react-native';
+import { BlurView } from 'expo-blur';
+import { Machine, Maintenance } from '../../types';
 
-// Dados fictícios de máquinas e manutenções
+
 const maquinasMocadas: Machine[] = [
   { id: 1, name: 'Fresadora', type: 'Corte', location: 'Fábrica 1', model: 'F-123', manufactureDate: '2020', serialNumber: 'A12345' },
   { id: 2, name: 'Torno', type: 'Furação', location: 'Fábrica 2', model: 'T-456', manufactureDate: '2019', serialNumber: 'B67890' },
@@ -75,8 +75,8 @@ export default function TabMaintenance() {
 
   return (
     <SafeAreaView className="flex-1 bg-customBlue">
-      <ScrollView className="flex-1 mb-16 m-5">
-      <Text className="text-2xl font-bold text-white mb-4">Selecionar Máquina para Manutenção</Text>
+      <View className="flex-1 mb-16 m-5">
+        <Text className="text-2xl font-bold text-white mb-4">Selecionar Máquina para Manutenção</Text>
         {/* Seletor de Máquina */}
         <TouchableOpacity
           className="p-4 mb-4 rounded-lg bg-blue-900"
@@ -97,7 +97,6 @@ export default function TabMaintenance() {
           <BlurView intensity={50} className="flex-1 justify-center items-center">
             <View className="bg-blue-900 p-5 rounded-lg w-80 h-2/3">
               <Text className="text-2xl font-bold text-white mb-4">Escolha uma Máquina</Text>
-              <ScrollView className="mb-4">
                 <FlatList
                   data={maquinasMocadas}
                   keyExtractor={(item) => item.id.toString()}
@@ -121,22 +120,20 @@ export default function TabMaintenance() {
                     </TouchableOpacity>
                   )}
                 />
-              </ScrollView>
               <TouchableOpacity className="bg-red-600 p-3 rounded-md mt-4" onPress={() => setModalVisible(false)}>
                 <Text className="text-white font-bold text-center">Cancelar</Text>
               </TouchableOpacity>
             </View>
           </BlurView>
-
         </Modal>
 
         {/* Comentários */}
-        <View className="p-4 bg-blue-900 rounded-lg mb-4">
+        <View className="p-4 bg-blue-800 rounded-lg mb-4">
           <Text className="text-xl text-white mb-2">Comentários:</Text>
           <TextInput
-            className="border border-gray-300 rounded-md p-2 text-white bg-blue-800"
+            className="border border-gray-300 rounded-lg p-2 text-white bg-blue-900"
             placeholder="Digite os comentários aqui"
-            placeholderTextColor="#ccc"
+            placeholderTextColor="#D1D5DB"
             value={comments}
             onChangeText={setComments}
           />
@@ -144,7 +141,7 @@ export default function TabMaintenance() {
 
         {/* Botão de Manutenção */}
         <TouchableOpacity
-          className="bg-green-500 p-3 rounded-md mt-5"
+          className="bg-green-500 p-3 rounded-lg"
           onPress={handleMaintenance}
         >
           <Text className="text-white font-bold text-center">Marcar como em Manutenção</Text>
@@ -158,7 +155,7 @@ export default function TabMaintenance() {
           renderItem={renderHistoricoItem}
           ListEmptyComponent={<Text className="text-gray-300">Nenhuma manutenção registrada.</Text>}
         />
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
