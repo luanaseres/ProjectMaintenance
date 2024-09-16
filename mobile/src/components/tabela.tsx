@@ -54,8 +54,8 @@ export function Tabela() {
       <Text className="text-2xl font-bold mb-4 text-center text-white">Itens da Empresa</Text>
 
       <ScrollView horizontal={false}>
-        <View className="w-full">
-          <View className="flex-row bg-blue-500 p-2 border border-gray-300">
+        <View className="w-full bg-white">
+          <View className="flex-row bg-customBlue p-2 border border-gray-300">
             <Text className="flex-1 text-white font-bold text-center">ID</Text>
             <Text className="flex-1 text-white font-bold text-center">Nome</Text>
             <Text className="flex-1 text-white font-bold text-center">Modelo</Text>
@@ -64,11 +64,11 @@ export function Tabela() {
           </View>
           {currentItems.map((item) => (
             <View key={item.id} className="flex-row border border-gray-300 p-2">
-              <Text className="flex-1 text-center text-white">{item.id}</Text>
-              <Text className="flex-1 text-center text-white">{item.nome}</Text>
-              <Text className="flex-1 text-center text-white">{item.modelo}</Text>
-              <Text className="flex-1 text-center text-white">{item.quantidade}</Text>
-              <Text className="flex-1 text-center text-white">{item.status}</Text>
+              <Text className="flex-1 text-center text-black">{item.id}</Text>
+              <Text className="flex-1 text-center text-black">{item.nome}</Text>
+              <Text className="flex-1 text-center text-black">{item.modelo}</Text>
+              <Text className="flex-1 text-center text-black">{item.quantidade}</Text>
+              <Text className="flex-1 text-center text-black">{item.status}</Text>
             </View>
           ))}
         </View>
