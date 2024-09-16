@@ -1,7 +1,7 @@
 import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useState } from "react";
 import React from "react";
-import { Link, router } from "expo-router";
+import { Link } from "expo-router";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -36,14 +36,18 @@ export default function LoginScreen() {
         />
 
         {/* Botão de Login */}
-        <TouchableOpacity
-          className="bg-customBlue p-4 rounded-lg mb-4"
-        >
+        <TouchableOpacity className="bg-customBlue p-4 rounded-lg mb-4">
           <Link href={"/(tabs)"}>
             <Text className='text-white text-center text-lg'>Logar</Text>
           </Link>
-          {/* <Button onPress={()=> {router.push("/")}}></Button> */}
         </TouchableOpacity>
+
+        <View className='flex-row justify-center w-full'>
+          <Text className='text-gray-600 mr-2'>Não tem uma conta?</Text>
+          <Link href="/signUp">
+            <Text className='text-customBlue font-bold'>Cadastrar-se</Text>
+          </Link>
+        </View>
       </View>
     </View>
   );
