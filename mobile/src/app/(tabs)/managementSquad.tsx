@@ -106,7 +106,7 @@ export default function TabManagementSquad() {
           }`}
           onPress={() => setTelaAtiva('atribuir')}
         >
-          <Text className={` self-center mt-2 text-center ${
+          <Text className={` self-center text-center ${
             telaAtiva === 'atribuir' ? 'text-white' : 'text-white'
           }`}>Visualizar Equipe</Text>
         </TouchableOpacity>

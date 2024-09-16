@@ -48,6 +48,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Descreva o problema"
+            placeholderTextColor="#202020"
             value={descricao}
             onChangeText={setDescricao}
           />
@@ -58,6 +59,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Ex.: Alta, Média, Baixa"
+            placeholderTextColor="#202020"
             value={prioridade}
             onChangeText={setPrioridade}
           />
@@ -68,6 +70,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Nome do responsável"
+            placeholderTextColor="#202020"
             value={responsavel}
             onChangeText={setResponsavel}
           />
@@ -102,6 +105,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Adicione comentários"
+            placeholderTextColor="#202020"
             value={comentarios}
             onChangeText={setComentarios}
           />

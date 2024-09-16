@@ -52,15 +52,15 @@ export default function RegistroMateriaisManutencao() {
             {manutencoesMocadas.map((manutencao) => (
               <TouchableOpacity
                 key={manutencao.id}
-                className={`p-4 mb-4 rounded-lg ${manutencaoSelecionada === manutencao.id ? 'bg-blue-800' : 'bg-blue-900'}`}
+                className={`p-4 mb-4 rounded-lg ${manutencaoSelecionada === manutencao.id ? 'bg-customGrey' : 'bg-customGrey'}`}
                 onPress={() => selecionarManutencao(manutencao.id)}
               >
-                <Text className={`text-lg font-bold ${manutencaoSelecionada === manutencao.id ? 'text-white' : 'text-gray-100'}`}>
+                <Text className={`text-lg font-bold ${manutencaoSelecionada === manutencao.id ? 'text-black' : 'text-black'}`}>
                   {manutencao.descricao} - {manutencao.maquina}
                 </Text>
-                <Text className="text-gray-300">Responsável: {manutencao.responsavel}</Text>
-                <Text className="text-gray-300">Status: {manutencao.status}</Text>
-                <Text className="text-gray-300">Prioridade: {manutencao.prioridade}</Text>
+                <Text className="text-slate-900">Responsável: {manutencao.responsavel}</Text>
+                <Text className="text-slate-900">Status: {manutencao.status}</Text>
+                <Text className="text-slate-900">Prioridade: {manutencao.prioridade}</Text>
               </TouchableOpacity>
             ))}
           </View>
@@ -77,18 +77,18 @@ export default function RegistroMateriaisManutencao() {
               <View key={index} className="flex-row items-center bg-customBlue p-4 rounded-lg">
                 <View className="flex-1 mr-2">
                   <TextInput
-                    className="border border-gray-300 rounded-md p-2 text-white bg-blue-900"
+                    className="border border-gray-300 rounded-md p-2 text-slate-900 bg-customGrey"
                     placeholder="Nome da peça"
-                    placeholderTextColor="#ccc"
+                    placeholderTextColor="#202020"
                     value={peca.descricao}
                     onChangeText={(value) => atualizarPecaMaterial(index, 'descricao', value)}
                   />
                 </View>
                 <View className="w-24">
                   <TextInput
-                    className="border border-gray-300 rounded-md p-2 text-white bg-blue-900"
+                    className="border border-gray-300 rounded-md p-2 text-slate-900 bg-customGrey"
                     placeholder="Qtd"
-                    placeholderTextColor="#ccc"
+                    placeholderTextColor="#202020"
                     keyboardType="numeric"
                     value={peca.quantidade}
                     onChangeText={(value) => atualizarPecaMaterial(index, 'quantidade', value)}

@@ -65,10 +65,10 @@ export default function TabMaintenance() {
   const renderHistoricoItem = ({ item }: { item: Maintenance }) => {
     const machine = maquinasMocadas.find((m) => m.id === item.machineId);
     return (
-      <View className="p-4 mb-2 rounded-lg bg-blue-800">
-        <Text className="text-lg font-bold text-white">{machine?.name}</Text>
-        <Text className="text-gray-300">Data: {item.maintenanceDate}</Text>
-        <Text className="text-gray-300">Comentários: {item.comments}</Text>
+      <View className="p-4 mb-2 rounded-lg bg-customGrey">
+        <Text className="text-lg font-bold text-black">{machine?.name}</Text>
+        <Text className="text-slate-900">Data: {item.maintenanceDate}</Text>
+        <Text className="text-slate-900">Comentários: {item.comments}</Text>
       </View>
     );
   };
@@ -79,10 +79,10 @@ export default function TabMaintenance() {
         <Text className="text-2xl font-bold text-white mb-4">Selecionar Máquina para Manutenção</Text>
         {/* Seletor de Máquina */}
         <TouchableOpacity
-          className="p-4 mb-4 rounded-lg bg-blue-900"
+          className="p-4 mb-4 rounded-lg bg-customGrey"
           onPress={() => setModalVisible(true)}
         >
-          <Text className="text-lg font-bold text-gray-100">
+          <Text className="text-lg font-bold text-slate-900">
             {selectedMachineId ? maquinasMocadas.find(machine => machine.id === selectedMachineId)?.name : 'Selecione a Máquina'}
           </Text>
         </TouchableOpacity>
@@ -95,7 +95,7 @@ export default function TabMaintenance() {
         >
           {/* BlurView para o efeito de embaçado */}
           <BlurView intensity={50} className="flex-1 justify-center items-center">
-            <View className="bg-blue-900 p-5 rounded-lg w-80 h-2/3">
+            <View className="bg-customBlue p-5 rounded-lg w-80 h-2/3">
               <Text className="text-2xl font-bold text-white mb-4">Escolha uma Máquina</Text>
                 <FlatList
                   data={maquinasMocadas}
@@ -128,12 +128,12 @@ export default function TabMaintenance() {
         </Modal>
 
         {/* Comentários */}
-        <View className="p-4 bg-blue-800 rounded-lg mb-4">
-          <Text className="text-xl text-white mb-2">Comentários:</Text>
+        <View className="p-4 bg-customGrey rounded-lg mb-4">
+          <Text className="text-xl text-black mb-2">Comentários:</Text>
           <TextInput
-            className="border border-gray-300 rounded-lg p-2 text-white bg-blue-900"
+            className="border border-gray-300 rounded-lg p-2 text-white bg-gray-200"
             placeholder="Digite os comentários aqui"
-            placeholderTextColor="#D1D5DB"
+            placeholderTextColor="#404040"
             value={comments}
             onChangeText={setComments}
           />
