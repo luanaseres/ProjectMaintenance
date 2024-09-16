@@ -2,9 +2,10 @@ import { Stack } from 'expo-router/stack';
 
 export default function Layout() {
   return (
-    <Stack initialRouteName='login'>
-      <Stack.Screen name="login" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <Stack screenOptions={{headerShown:false, animation:'ios'}} initialRouteName='index'>
+      <Stack.Screen name="index"  />
+      <Stack.Screen name="settings"  /> 
+      <Stack.Screen name="(tabs)"  />
     </Stack>
   );
 }

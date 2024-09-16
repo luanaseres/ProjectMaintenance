@@ -4,14 +4,23 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
-import { Tabs } from 'expo-router';
+import { Link, Tabs } from 'expo-router';
 
 
 
 export default function TabLayout() {
   const color = 'white'
   return (
-    <Tabs screenOptions={{headerLeft: () => <LogoTitle/>, headerStyle:{backgroundColor:"#1C1E53"}, headerTitle:"", tabBarStyle:{backgroundColor:'#1C1E53'}, tabBarShowLabel:false }}>
+    <Tabs screenOptions={{headerLeft: () => <LogoTitle/>, 
+    headerRight: () => (
+          <Link href="/settings" className='mr-4'>
+            <FontAwesome size={28} name="cog" color={color} />
+          </Link>
+        ),
+        headerStyle:{backgroundColor:"#1C1E53"}, 
+        headerTitle:"", 
+        tabBarStyle:{backgroundColor:'#1C1E53'}, 
+        tabBarShowLabel:false }}>
       <Tabs.Screen
         name="index"
         options={{
@@ -60,13 +69,6 @@ export default function TabLayout() {
         options={{
           title: 'Request',
           tabBarIcon: ({color}) => <MaterialCommunityIcons name="clipboard-text-multiple" size={24} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="settings"
-        options={{
-          title: 'Settings',
-          tabBarIcon: ({color}) => <FontAwesome size={28} name="cog" color={color} />,
         }}
       />
     </Tabs>
