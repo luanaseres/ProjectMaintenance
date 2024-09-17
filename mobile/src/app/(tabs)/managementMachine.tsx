@@ -3,6 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, SafeAreaView } from 'react-na
 import { Machine } from '../../types'; 
 import { FontAwesome5 } from '@expo/vector-icons';
 
+// Dados simulados de máquinas para testes
 const maquinasMocadas: Machine[] = [
   { id: 1, name: 'Fresadora', type: 'Corte', location: 'Fábrica 1', model: 'F-123', manufactureDate: '2020', serialNumber: 'A12345' },
   { id: 2, name: 'Torno', type: 'Furação', location: 'Fábrica 2', model: 'T-456', manufactureDate: '2019', serialNumber: 'B67890' },
@@ -20,25 +21,30 @@ const maquinasMocadas: Machine[] = [
 
 
 export default function TabManagementMachine() {
+  // Estado para armazenar o ID da máquina atualmente selecionada
   const [maquinaSelecionada, setMaquinaSelecionada] = useState<number | null>(null);
 
+  // Função para atualizar a máquina selecionada
   const selecionarMaquina = (id: number) => {
     setMaquinaSelecionada(id);
   };
 
+  // Obtém a máquina ativa com base no ID selecionado
   const maquinaAtiva = maquinasMocadas.find((maquina) => maquina.id === maquinaSelecionada);
 
   return (
     <SafeAreaView className="flex-1 bg-customBlue">
       <ScrollView className="flex-1">
-        {maquinaSelecionada === null ? (
-          <View className="flex-1 m-5">
+        {maquinaSelecionada === null ? ( // Condicional para exibir a lista de máquinas ou detalhes da máquina selecionada
+          <View className="flex-1 m-5"> 
+
+            {/* Contêiner para a lista de todas as máquinas */}
             <Text className="text-2xl font-bold text-white mb-4">Selecione uma Máquinas</Text>
             {maquinasMocadas.map((maquina) => (
               <TouchableOpacity
-                key={maquina.id}
+                key={maquina.id} // Identificador único para cada item da lista
                 className={`p-4 mb-4 rounded-lg ${maquinaSelecionada === maquina.id ? 'bg-customGrey' : 'bg-customGrey'}`}
-                onPress={() => selecionarMaquina(maquina.id)}
+                onPress={() => selecionarMaquina(maquina.id)} // Atualiza a máquina selecionada ao clicar
               >
                 <Text className={`text-lg font-bold ${maquinaSelecionada === maquina.id ? 'text-black' : 'text-black'}`}>
                   {maquina.name} - {maquina.type}
@@ -52,6 +58,8 @@ export default function TabManagementMachine() {
             <Text className="text-2xl font-bold text-white text-center mb-4">Detalhes da Máquina</Text>
             
             <View className="p-4 rounded-lg mb-4">
+
+              {/* Informações da máquina com ícones e textos */}
               <View className="flex-row items-center mb-2">
                 <FontAwesome5 name="tools" size={20} color="white" />
                 <Text className="text-xl text-white ml-3">Nome: {maquinaAtiva?.name}</Text>
@@ -91,12 +99,12 @@ export default function TabManagementMachine() {
         )}
       </ScrollView>
 
-      {maquinaSelecionada !== null && (
+      {maquinaSelecionada !== null && ( // Exibe o botão de voltar apenas se uma máquina estiver selecionada
         <View className="absolute bottom-0 left-0 right-0 p-4 bg-customBlue">
           <View className="flex-row justify-between">
             <TouchableOpacity
               className="bg-customGrey p-3 rounded-md flex-1 ml-2"
-              onPress={() => setMaquinaSelecionada(null)}
+              onPress={() => setMaquinaSelecionada(null)} // Limpa a seleção da máquina e retorna à lista
             >
               <Text className="text-black font-bold text-center">Voltar</Text>
             </TouchableOpacity>

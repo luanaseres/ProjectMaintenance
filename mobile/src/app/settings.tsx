@@ -4,24 +4,29 @@ import { View, Text, TextInput, Switch, ScrollView, SafeAreaView, TouchableOpaci
 import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function Settings() {
+  // Estado do usuário com informações fictícias
   const [user, setUser] = useState({
     name: 'João Silva',
     email: 'joao.silva@example.com',
   });
 
+  // Estados para preferências de notificação
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [pushNotifications, setPushNotifications] = useState(true);
 
+  // Funções para alternar as preferências de notificação
   const toggleEmailNotifications = () => setEmailNotifications(prevState => !prevState);
   const togglePushNotifications = () => setPushNotifications(prevState => !prevState);
 
   return (
     <SafeAreaView className="flex-1 bg-customBlue">
-      <View className='flex flex-row w-full align-middle text-center mt-4'>
+      {/* Cabeçalho com navegação e título */}
+      <View className='flex flex-row w-full items-center justify-between mt-4 px-4'>
         <Link href="/(tabs)" className='mr-4'>
           <AntDesign name="arrowleft" size={30} color="white" />
         </Link>
-        <Text className="text-xl font-semibold text-white mb-2 text-center">Configurações</Text>
+        <Text className="text-xl font-semibold text-white">Configurações</Text>
+        <View style={{ width: 30 }} /> 
       </View>
       
       <ScrollView className="flex-1 p-4">

@@ -55,6 +55,7 @@ export function Tabela() {
 
       <ScrollView horizontal={false}>
         <View className="w-full bg-white">
+          {/* Cabeçalho da Tabela */}
           <View className="flex-row bg-customBlue p-2 border border-gray-300">
             <Text className="flex-1 text-white font-bold text-center">ID</Text>
             <Text className="flex-1 text-white font-bold text-center">Nome</Text>
@@ -62,6 +63,8 @@ export function Tabela() {
             <Text className="flex-1 text-white font-bold text-center">Qtd</Text>
             <Text className="flex-1 text-white font-bold text-center">Status</Text>
           </View>
+
+          {/* Linhas da Tabela */}
           {currentItems.map((item) => (
             <View key={item.id} className="flex-row border border-gray-300 p-2">
               <Text className="flex-1 text-center text-black">{item.id}</Text>
@@ -74,6 +77,7 @@ export function Tabela() {
         </View>
       </ScrollView>
 
+      {/* Controles de Paginação */}
       <View className="flex-row justify-between items-center mt-5">
         <TouchableOpacity
           onPress={() => handleChangePage(currentPage - 1)}

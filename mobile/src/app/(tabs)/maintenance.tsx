@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Modal, FlatList, TextInput, Alert, SafeAr
 import { BlurView } from 'expo-blur';
 import { Machine, Maintenance } from '../../types';
 
-
+// Dados mockados simulados de máquinas
 const maquinasMocadas: Machine[] = [
   { id: 1, name: 'Fresadora', type: 'Corte', location: 'Fábrica 1', model: 'F-123', manufactureDate: '2020', serialNumber: 'A12345' },
   { id: 2, name: 'Torno', type: 'Furação', location: 'Fábrica 2', model: 'T-456', manufactureDate: '2019', serialNumber: 'B67890' },
@@ -19,6 +19,7 @@ const maquinasMocadas: Machine[] = [
   { id: 12, name: 'Serra de Fita', type: 'Corte', location: 'Fábrica 12', model: 'SF-250', manufactureDate: '2021', serialNumber: 'L55667' },
 ];
 
+// Dados simulados de histórico de manutenção
 const historicoManutencaoMock: Maintenance[] = [
   { id: 1, machineId: 1, maintenanceDate: '2023-09-01', comments: 'Substituição de peças.' },
   { id: 2, machineId: 2, maintenanceDate: '2023-08-25', comments: 'Lubrificação.' },
@@ -36,18 +37,20 @@ const historicoManutencaoMock: Maintenance[] = [
 
 
 export default function TabMaintenance() {
+  // Estados para controle do ID da máquina selecionada, comentários, visibilidade do modal e histórico de manutenção
   const [selectedMachineId, setSelectedMachineId] = useState<number | null>(null);
   const [comments, setComments] = useState<string>('');
   const [modalVisible, setModalVisible] = useState(false);
   const [historicoManutencao, setHistoricoManutencao] = useState<Maintenance[]>(historicoManutencaoMock);
 
-  // Simula a marcação da máquina em manutenção
+  // Função que simula a marcação da máquina em manutenção
   const handleMaintenance = () => {
     if (selectedMachineId === null) {
       Alert.alert('Selecione uma máquina', 'Por favor, selecione uma máquina para marcar como em manutenção.');
       return;
     }
 
+    // Criação de um novo registro de manutenção
     const novaManutencao: Maintenance = {
       id: historicoManutencao.length + 1,
       machineId: selectedMachineId,
@@ -55,14 +58,16 @@ export default function TabMaintenance() {
       comments: comments || 'Manutenção preventiva.',
     };
 
+    // Atualização do estado com o novo histórico de manutenção
     setHistoricoManutencao([...historicoManutencao, novaManutencao]);
     Alert.alert('Manutenção', `A máquina foi marcada como em manutenção.`);
     setSelectedMachineId(null); // Limpar seleção de máquina
     setComments(''); // Limpar comentários
   };
 
-  // Renderiza o histórico de manutenção
+  // Função para renderizar cada item do histórico de manutenção
   const renderHistoricoItem = ({ item }: { item: Maintenance }) => {
+    // Busca a máquina correspondente ao ID no histórico de manutenções
     const machine = maquinasMocadas.find((m) => m.id === item.machineId);
     return (
       <View className="p-4 mb-2 rounded-lg bg-customGrey">
@@ -77,7 +82,8 @@ export default function TabMaintenance() {
     <SafeAreaView className="flex-1 bg-customBlue">
       <View className="flex-1 mb-16 m-5">
         <Text className="text-2xl font-bold text-white mb-4">Selecionar Máquina para Manutenção</Text>
-        {/* Seletor de Máquina */}
+        
+         {/* Botão para abrir o modal de seleção de máquina */}
         <TouchableOpacity
           className="p-4 mb-4 rounded-lg bg-customGrey"
           onPress={() => setModalVisible(true)}
@@ -93,7 +99,7 @@ export default function TabMaintenance() {
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
         >
-          {/* BlurView para o efeito de embaçado */}
+          {/* BlurView para o efeito de embaçado do fundo da tela */}
           <BlurView intensity={50} className="flex-1 justify-center items-center">
             <View className="bg-customBlue p-5 rounded-lg w-80 h-2/3">
               <Text className="text-2xl font-bold text-white mb-4">Escolha uma Máquina</Text>
@@ -106,8 +112,8 @@ export default function TabMaintenance() {
                         selectedMachineId === item.id ? 'bg-blue-800' : 'bg-blue-900'
                       }`}
                       onPress={() => {
-                        setSelectedMachineId(item.id);
-                        setModalVisible(false);
+                        setSelectedMachineId(item.id); // Atualiza a máquina selecionada
+                        setModalVisible(false); // Fecha o modal
                       }}
                     >
                       <Text
@@ -120,6 +126,8 @@ export default function TabMaintenance() {
                     </TouchableOpacity>
                   )}
                 />
+
+              {/* Botão para cancelar a seleção e fechar o modal */}
               <TouchableOpacity className="bg-red-600 p-3 rounded-md mt-4" onPress={() => setModalVisible(false)}>
                 <Text className="text-white font-bold text-center">Cancelar</Text>
               </TouchableOpacity>
@@ -127,7 +135,7 @@ export default function TabMaintenance() {
           </BlurView>
         </Modal>
 
-        {/* Comentários */}
+         {/* Campo para inserir comentários sobre a manutenção */}
         <View className="p-4 bg-customGrey rounded-lg mb-4">
           <Text className="text-xl text-black mb-2">Comentários:</Text>
           <TextInput
@@ -135,25 +143,25 @@ export default function TabMaintenance() {
             placeholder="Digite os comentários aqui"
             placeholderTextColor="#404040"
             value={comments}
-            onChangeText={setComments}
+            onChangeText={setComments} // Atualiza o estado dos comentários
           />
         </View>
 
-        {/* Botão de Manutenção */}
+        {/* Botão para marcar a máquina selecionada como em manutenção */}
         <TouchableOpacity
           className="bg-green-500 p-3 rounded-lg"
-          onPress={handleMaintenance}
+          onPress={handleMaintenance} // Executa a função de registrar manutenção
         >
           <Text className="text-white font-bold text-center">Marcar como em Manutenção</Text>
         </TouchableOpacity>
 
-        {/* Histórico de Manutenções */}
+         {/* Exibição do histórico de manutenções */}
         <Text className="text-2xl font-bold text-white mb-4 mt-4">Histórico de Manutenções</Text>
         <FlatList
           data={historicoManutencao}
           keyExtractor={(item) => item.id.toString()}
-          renderItem={renderHistoricoItem}
-          ListEmptyComponent={<Text className="text-gray-300">Nenhuma manutenção registrada.</Text>}
+          renderItem={renderHistoricoItem} // Renderiza cada item do histórico
+          ListEmptyComponent={<Text className="text-gray-300">Nenhuma manutenção registrada.</Text>} // Mensagem quando não há manutenções
         />
       </View>
     </SafeAreaView>
