@@ -6,8 +6,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 export default function Settings() {
   // Estado do usuário com informações fictícias
   const [user, setUser] = useState({
-    name: 'João Silva',
-    email: 'joao.silva@example.com',
+    name: 'Pedro Augusto',
+    email: 'pedroAugusto@example.com',
   });
 
   // Estados para preferências de notificação
