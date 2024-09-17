@@ -38,7 +38,7 @@ export default function SignupScreen() {
         <TextInput
           className='border border-gray-300 p-3 mb-4 rounded'
           placeholder="Enter your name"
-          placeholderTextColor="black"
+          placeholderTextColor="gray"
           value={name}
           onChangeText={setName}
           accessibilityLabel="Nome"
@@ -49,7 +49,7 @@ export default function SignupScreen() {
         <TextInput
           className='border border-gray-300 p-3 mb-4 rounded'
           placeholder="Enter your email"
-          placeholderTextColor="black"
+          placeholderTextColor="gray"
           value={email}
           onChangeText={setEmail}
           keyboardType="email-address"
@@ -62,7 +62,7 @@ export default function SignupScreen() {
         <TextInput
           className='border border-gray-300 p-3 mb-4 rounded'
           placeholder="Enter your password"
-          placeholderTextColor="black"
+          placeholderTextColor="gray"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
@@ -74,7 +74,7 @@ export default function SignupScreen() {
         <TextInput
           className='border border-gray-300 p-3 mb-4 rounded'
           placeholder="Confirm your password"
-          placeholderTextColor="black"
+          placeholderTextColor="gray"
           value={confirmPassword}
           onChangeText={setConfirmPassword}
           secureTextEntry
@@ -83,8 +83,10 @@ export default function SignupScreen() {
         />
 
         {/* Botão de Cadastro */}
-        <TouchableOpacity className="bg-customBlue p-4 rounded-lg mb-4 items-center" onPress={handleSubmit}>
-          <Text className='text-white text-center text-lg'>Cadastrar</Text>
+        <TouchableOpacity className="bg-customBlue p-4 rounded-lg mb-4 items-center">
+          <Link href={"/"}> {/* redireciona para aba principal após cadastro */}
+            <Text className='text-white text-center text-lg'>Cadastrar</Text>
+          </Link>
         </TouchableOpacity>
       </View>
     </View>

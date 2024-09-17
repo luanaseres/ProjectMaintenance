@@ -139,9 +139,9 @@ export default function TabMaintenance() {
         <View className="p-4 bg-customGrey rounded-lg mb-4">
           <Text className="text-xl text-black mb-2">Comentários:</Text>
           <TextInput
-            className="border border-gray-300 rounded-lg p-2 text-white bg-gray-200"
+            className="border border-gray-300 rounded-lg p-2 bg-gray-200"
             placeholder="Digite os comentários aqui"
-            placeholderTextColor="#404040"
+            placeholderTextColor="gray"
             value={comments}
             onChangeText={setComments} // Atualiza o estado dos comentários
           />
