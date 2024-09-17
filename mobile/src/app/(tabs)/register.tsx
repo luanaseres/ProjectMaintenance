@@ -88,18 +88,18 @@ export default function RegistroMateriaisManutencao() {
               <View key={index} className="flex-row items-center bg-customBlue p-4 rounded-lg">
                 <View className="flex-1 mr-2">
                   <TextInput
-                    className="border border-gray-300 rounded-md p-2 text-slate-900 bg-customGrey"
+                    className="border border-gray-300 rounded-md p-2 text-black bg-customGrey"
                     placeholder="Nome da peça"
-                    placeholderTextColor="#202020"
+                    placeholderTextColor="gray"
                     value={peca.descricao}
                     onChangeText={(value) => atualizarPecaMaterial(index, 'descricao', value)}
                   />
                 </View>
                 <View className="w-24">
                   <TextInput
-                    className="border border-gray-300 rounded-md p-2 text-slate-900 bg-customGrey"
+                    className="border border-gray-300 rounded-md p-2 text-black bg-customGrey"
                     placeholder="Qtd"
-                    placeholderTextColor="#202020"
+                    placeholderTextColor="gray"
                     keyboardType="numeric"
                     value={peca.quantidade}
                     onChangeText={(value) => atualizarPecaMaterial(index, 'quantidade', value)}

@@ -57,7 +57,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Descreva o problema"
-            placeholderTextColor="#202020"
+            placeholderTextColor="gray"
             value={descricao}
             onChangeText={setDescricao}
           />
@@ -69,7 +69,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Ex.: Alta, Média, Baixa"
-            placeholderTextColor="#202020"
+            placeholderTextColor="gray"
             value={prioridade}
             onChangeText={setPrioridade}
           />
@@ -81,7 +81,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Nome do responsável"
-            placeholderTextColor="#202020"
+            placeholderTextColor="gray"
             value={responsavel}
             onChangeText={setResponsavel}
           />
@@ -93,7 +93,7 @@ export default function TabRequest() {
           <View className="flex-row">
             {/* Botões para selecionar o status */}
             <TouchableOpacity
-              className={`p-2 rounded ${status === 'pendente' ? 'bg-green-600' : 'bg-gray-600'} mr-2`}
+              className={`p-2 rounded ${status === 'pendente' ? 'bg-blue-600' : 'bg-gray-600'} mr-2`}
               onPress={() => setStatus('pendente')}
             >
               <Text className="text-white">Pendente</Text>
@@ -105,7 +105,7 @@ export default function TabRequest() {
               <Text className="text-white">Em Andamento</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              className={`p-2 rounded ${status === 'concluída' ? 'bg-blue-600' : 'bg-gray-600'}`}
+              className={`p-2 rounded ${status === 'concluída' ? 'bg-green-600' : 'bg-gray-600'}`}
               onPress={() => setStatus('concluída')}
             >
               <Text className="text-white">Concluída</Text>
@@ -119,7 +119,7 @@ export default function TabRequest() {
           <TextInput
             className="p-2 rounded bg-white"
             placeholder="Adicione comentários"
-            placeholderTextColor="#202020"
+            placeholderTextColor="gray"
             value={comentarios}
             onChangeText={setComentarios}
           />
@@ -128,7 +128,7 @@ export default function TabRequest() {
         {/* Seção para selecionar e exibir uma foto */}
         <View className="mb-4">
           <Text className="text-lg font-semibold text-white mb-2">Foto</Text>
-          <Button title="Escolher Imagem" onPress={escolherImagem} />
+          <Button title="Escolher Imagem" onPress={escolherImagem}/>
          
           {/* Exibe a imagem selecionada, se houver */}
           {foto && <Image source={{ uri: foto }} style={{ width: 100, height: 100, marginTop: 10 }} />}
