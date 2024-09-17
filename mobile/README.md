@@ -1,50 +1,94 @@
-# Welcome to your Expo app 👋
+# Documentação do Projeto Mobile - Sistema de Manutenção 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Resumo
 
-## Get started
+Este projeto faz parte de um sistema de manutenção composto por duas aplicações: uma web e outra mobile. A aplicação mobile foi desenvolvida com o objetivo de gerenciar máquinas, manutenções e equipes, além de fornecer funcionalidades de autenticação e visualização de relatórios. A aplicação permite o acompanhamento detalhado de solicitações de manutenção, registro de peças e materiais utilizados, e gerenciamento de equipes envolvidas nas manutenções.
 
-1. Install dependencies
+### Funcionalidades do Aplicativo Mobile
 
+#### 1. **Gerenciamento de Máquinas**
+   - Lista de máquinas com informações básicas (nome, tipo, localização).
+   - Acesso a informações detalhadas de uma máquina (modelo, data de fabricação, número de série).
+
+#### 2. **Manutenção**
+   - Visualizar o histórico de manutenções recentes.
+   - Marcar uma máquina como "em manutenção" e adicionar comentários.
+
+#### 3. **Solicitação**
+   - Criar solicitações de manutenção (descrição do problema, prioridade, responsável).
+   - Visualizar o status da manutenção (pendente, em andamento, concluída).
+   - Adicionar comentários e fotos à solicitação.
+
+#### 4. **Registro**
+   - Registrar as peças e materiais utilizados durante a manutenção.
+
+#### 5. **Relatórios**
+   - Visualizar relatórios de manutenções recentes (data, descrição, status).
+   - Visualizar o estoque de peças disponíveis (nome, quantidade).
+   - Consultar a disponibilidade de peças específicas para uma manutenção.
+
+#### 6. **Gerenciamento de Equipes**
+   - Visualizar a lista de equipes disponíveis e seus membros.
+   - Verificar a disponibilidade de equipes para uma determinada manutenção.
+
+#### 7. **Autenticação e Autorização**
+   - Autenticação via login e senha.
+
+## Estrutura do Projeto
+
+O código está organizado da seguinte maneira:
+
+- **components/**: Contém os componentes reutilizáveis, como cards e tabelas, usados nas telas.
+- **app/**: Contém as telas principais da aplicação. 
+  - As telas que não fazem parte do menu de navegação (tab) estão diretamente dentro desta pasta.
+  - As telas que fazem parte do menu de navegação estão dentro da pasta `tabs`, que se encontra dentro de `app/`.
+
+## Tecnologias Utilizadas
+
+- **React Native**: Framework principal para desenvolvimento da aplicação mobile.
+- **NativeWind**: Utilizado para estilização com Tailwind CSS.
+- **Expo**: Plataforma para execução e desenvolvimento de aplicativos React Native de maneira simplificada.
+
+## Como Iniciar o Projeto
+
+Para visualizar e executar o projeto em um dispositivo móvel, siga os seguintes passos:
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/LuanaSeres/ProjectMaintenance.git
+   ```
+   
+2. **Mude para a branch `develop`**:
+   ```bash
+   git checkout develop
+   ```
+
+3. **Entre na pasta mobile**:
+   ```bash
+   cd mobile
+   ```
+
+4. **Instale as dependências**:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+5. **Instale a CLI do Expo globalmente**:
    ```bash
-    npx expo start
+   npm install -g expo-cli
    ```
 
-In the output, you'll find options to open the app in a
+6. **Inicie o projeto**:
+   ```bash
+   npm start
+   ```
+   ou 
+   ```bash
+   npx expo start
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+7. **Baixe o app Expo Go** no seu dispositivo móvel:
+   - **iOS**: Utilize a câmera do seu celular para escanear o QR Code gerado.
+   - **Android**: Escaneie o QR Code diretamente pelo app **Expo Go**.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Agora, você deve conseguir visualizar e interagir com a aplicação mobile diretamente no seu dispositivo.

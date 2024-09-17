@@ -4,13 +4,13 @@ import React from "react";
 import { Link } from "expo-router";
 
 export default function LoginScreen() {
+  // State para armazenar o email e a senha do usuário
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
     <View className='flex-1 justify-center items-center bg-white'>
-
-      {/* Quadrado arredondado com sombra */}
+      {/* Container principal para o formulário de login */}
       <View className='w-4/5 bg-white p-8 rounded-xl shadow-lg'>
         <Text className='text-2xl font-bold text-center mb-6'>Login</Text>
 
@@ -35,13 +35,15 @@ export default function LoginScreen() {
           secureTextEntry
         />
 
-        {/* Botão de Login */}
+        {/* Botão de Login com navegação */}
         <TouchableOpacity className="bg-customBlue p-4 rounded-lg mb-4">
+          {/* O Link é utilizado para navegação */}
           <Link href={"/(tabs)"}>
             <Text className='text-white text-center text-lg'>Logar</Text>
           </Link>
         </TouchableOpacity>
 
+        {/* Link para a página de cadastro se o usuário ainda não tiver uma conta */}
         <View className='flex-row justify-center w-full'>
           <Text className='text-gray-600 mr-2'>Não tem uma conta?</Text>
           <Link href="/signUp">

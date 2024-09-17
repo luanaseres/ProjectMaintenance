@@ -1,37 +1,44 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 
+// Dados fictícios para simular manutenções
 const manutencoesMocadas = [
   { id: 1, descricao: 'Troca de óleo', maquina: 'Fresadora', responsavel: 'Pedro', status: 'Concluído', prioridade: 'Alta' },
   { id: 2, descricao: 'Substituição de filtro', maquina: 'CNC', responsavel: 'Maria', status: 'Pendente', prioridade: 'Média' },
   { id: 3, descricao: 'Ajuste de correia', maquina: 'Torno', responsavel: 'Augusto', status: 'Em progresso', prioridade: 'Baixa' },
 ];
 
+// Interface para definir o formato dos itens de peça/material
 interface PecaMaterial {
   descricao: string;
   quantidade: string;
 }
 
 export default function RegistroMateriaisManutencao() {
+  // Estado para controlar a manutenção selecionada e as peças materiais
   const [manutencaoSelecionada, setManutencaoSelecionada] = useState<number | null>(null);
   const [pecasMateriais, setPecasMateriais] = useState<PecaMaterial[]>([
     { descricao: 'Parafuso', quantidade: '100' },
     { descricao: 'Chave de fenda', quantidade: '10' },
   ]);
 
+  // Função para selecionar uma manutenção específica
   const selecionarManutencao = (id: number) => {
     setManutencaoSelecionada(id);
   };
 
+  // Função para adicionar uma nova peça/material à lista
   const adicionarPecaMaterial = () => {
     setPecasMateriais([...pecasMateriais, { descricao: '', quantidade: '' }]);
   };
 
+  // Função para remover uma peça/material da lista
   const removerPecaMaterial = (index: number) => {
     const updatedPecas = pecasMateriais.filter((_, i) => i !== index);
     setPecasMateriais(updatedPecas);
   };
 
+  // Função para atualizar uma peça/material existente
   const atualizarPecaMaterial = (index: number, field: keyof PecaMaterial, value: string) => {
     const updatedPecas = pecasMateriais.map((peca, i) =>
       i === index ? { ...peca, [field]: value } : peca
@@ -39,6 +46,7 @@ export default function RegistroMateriaisManutencao() {
     setPecasMateriais(updatedPecas);
   };
 
+  // Obtemos os detalhes da manutenção selecionada
   const manutencaoAtiva = manutencoesMocadas.find(
     (manutencao) => manutencao.id === manutencaoSelecionada
   );
@@ -46,6 +54,8 @@ export default function RegistroMateriaisManutencao() {
   return (
     <SafeAreaView className="flex-1 bg-customBlue">
       <ScrollView className="flex-1 mb-16">
+        
+        {/* Condicional para exibir a lista de manutenções ou os detalhes da manutenção selecionada */}
         {manutencaoSelecionada === null ? (
           <View className="flex-1 m-5">
             <Text className="text-2xl font-bold text-white mb-4 text-center">Selecione uma Manutenção</Text>
@@ -72,6 +82,7 @@ export default function RegistroMateriaisManutencao() {
             <Text className="text-xl text-white mb-2">Status: {manutencaoAtiva?.status}</Text>
             <Text className="text-xl text-white mb-4">Prioridade: {manutencaoAtiva?.prioridade}</Text>
 
+            {/* Se a manutenção estiver selecionada, exibe os materiais utilizados */}
             <Text className="text-xl font-bold text-white mt-5">Materiais Utilizados:</Text>
             {pecasMateriais.map((peca, index) => (
               <View key={index} className="flex-row items-center bg-customBlue p-4 rounded-lg">
@@ -106,6 +117,7 @@ export default function RegistroMateriaisManutencao() {
         )}
       </ScrollView>
 
+      {/* Se uma manutenção estiver selecionada, exibe botões para adicionar peça/material e ações de salvar/cancelar */}
       {manutencaoSelecionada !== null && (
         <View className="absolute bottom-0 left-0 right-0 p-4 bg-customBlue">
           <TouchableOpacity

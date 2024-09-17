@@ -93,13 +93,20 @@ const equipesMockadas: Equipe[] = [
 
 // Componente para atribuição de equipes
 export default function TabManagementSquad() {
+  // Estado para controlar a tela ativa (atribuição ou verificação)
   const [telaAtiva, setTelaAtiva] = useState<'atribuir' | 'verificar'>('atribuir');
+  
+  // Estado para armazenar a equipe selecionada
   const [equipeSelecionada, setEquipeSelecionada] = useState<string>('');
+  
+   // Estado para armazenar a manutenção selecionada
   const [manutencaoSelecionada, setManutencaoSelecionada] = useState<number>(0);
 
   return (
     <View className="flex-1 bg-customBlue">
       <View className="flex-row justify-around p-4 bg-customBlue">
+
+        {/* Botão para visualizar equipes */}
         <TouchableOpacity
           className={`flex-1 p-2 m-1 rounded bg-blue-500 text-center ${
             telaAtiva === 'atribuir' ? 'bg-blue-700' : 'bg-gray-700'
@@ -111,6 +118,7 @@ export default function TabManagementSquad() {
           }`}>Visualizar Equipe</Text>
         </TouchableOpacity>
 
+        {/* Botão para verificar disponibilidade */}
         <TouchableOpacity
           className={`flex-1 p-2 m-1 rounded bg-blue-500 text-center ${
             telaAtiva === 'verificar' ? 'bg-blue-700' : 'bg-gray-700'
@@ -122,7 +130,8 @@ export default function TabManagementSquad() {
           }`}>Verificar Disponibilidade</Text>
         </TouchableOpacity>
       </View>
-
+      
+      {/* Renderiza o componente correspondente à tela ativa */}  
       {telaAtiva === 'atribuir' && (
         <AtribuicaoEquipes onSelect={setEquipeSelecionada} selectedEquipe={equipeSelecionada} />
       )}
@@ -135,12 +144,15 @@ export default function TabManagementSquad() {
 
 // Componente para atribuição de equipes
 function AtribuicaoEquipes({ onSelect, selectedEquipe }: AtribuicaoEquipesProps) {
+  // Encontra a equipe selecionada nos dados mockados
   const equipeSelecionada = equipesMockadas.find(equipe => equipe.nomeEquipe === selectedEquipe);
 
   return (
     <View className="flex-1 justify-center items-center p-4 bg-customBlue">
       <Text className="text-2xl font-bold text-white mb-4">Visualização de Equipes</Text>
       <ScrollView className="w-full">
+
+        {/* Seção para selecionar a equipe */}
         <Text className="text-lg font-bold text-white mb-2">Selecione a Equipe</Text>
         {equipesMockadas.map((equipe, index) => (
           <TouchableOpacity
@@ -160,6 +172,7 @@ function AtribuicaoEquipes({ onSelect, selectedEquipe }: AtribuicaoEquipesProps)
           </TouchableOpacity>
         ))}
 
+        {/* Exibe detalhes da equipe selecionada */}
         {equipeSelecionada && (
           <View className="mt-4 p-4 bg-gray-200 shadow-md rounded">
             <Text className="text-xl font-bold mb-2">{equipeSelecionada.nomeEquipe}</Text>
@@ -180,9 +193,11 @@ function AtribuicaoEquipes({ onSelect, selectedEquipe }: AtribuicaoEquipesProps)
   );
 }
 
-// Componente para verificar a disponibilidade
+// Componente para verificar a disponibilidade das equipes para uma manutenção
 function DisponibilidadeEquipes({ onSelect, selectedManutencao }: DisponibilidadeEquipesProps) {
   const manutencaoSelecionada = manutencoesMockadas.find(manutencao => manutencao.id === selectedManutencao);
+  
+  // Filtra as equipes que estão disponíveis para a manutenção selecionada
   const equipesDisponiveis = equipesMockadas.filter(equipe =>
     manutencaoSelecionada?.equipesDisponiveis.includes(equipe.nomeEquipe)
   );
@@ -191,6 +206,8 @@ function DisponibilidadeEquipes({ onSelect, selectedManutencao }: Disponibilidad
     <View className="flex-1 p-4 bg-customBlue">
       <Text className="text-2xl font-bold text-white mb-4 text-center">Verificar Disponibilidade</Text>
       <ScrollView className="w-full">
+
+        {/* Seção para selecionar a manutenção */}
         <Text className="text-lg font-bold text-white mb-2">Selecione a Manutenção</Text>
         {manutencoesMockadas.map((manutencao) => (
           <TouchableOpacity
@@ -213,6 +230,7 @@ function DisponibilidadeEquipes({ onSelect, selectedManutencao }: Disponibilidad
           </TouchableOpacity>
         ))}
 
+        {/* Exibe detalhes da manutenção selecionada */}
         {manutencaoSelecionada && (
           <View className="mt-4 p-4 bg-customGrey shadow-md rounded">
             <Text className="text-xl font-bold mb-2">Manutenção Selecionada</Text>
