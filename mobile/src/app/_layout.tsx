@@ -6,7 +6,7 @@ export default function Layout() {
     <Stack 
       screenOptions={{
         headerShown: false, // Oculta o cabeçalho em todas as telas
-        animation: 'ios' // Define o tipo de animação de transição de tela para 'ios'
+        animation: 'default' // Define o tipo de animação de transição de tela 
       }} 
       initialRouteName='index' // Define a rota inicial ao iniciar o aplicativo
     >
